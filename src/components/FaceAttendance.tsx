@@ -97,6 +97,8 @@ export function FaceAttendance({ user }: { user: User }) {
           { name: 'Drishika Parida', rollNo: '202457012' },
           { name: 'P. Alisha Dora', rollNo: '202457029' },
           { name: 'S. Sradha Suman', rollNo: '202457028' },
+          { name: 'Anisha Swain', rollNo: '202457643' },
+          { name: 'Prabhasini Nayak', rollNo: '202457643' },
         ];
         const randomStudent = mockStudents[Math.floor(Math.random() * mockStudents.length)];
         
