@@ -15,7 +15,7 @@ const allowedUsers = [
   { name: 'drishika parida', rollNo: '202457012' },
   { name: 'p. alisha dora', rollNo: '202457029' },
   { name: 's.sradha suman', rollNo: '202457028' },
-  { name: 'anisha swain', rollNo: '202457643' },
+  { name: 'anisha swain', rollNo: '202457634' },
   { name: 'prabhasini nayak', rollNo: '202457643' },
 ];
 

@@ -14,7 +14,7 @@ const mockLogs = [
   { id: 5, name: 'Drishika Parida', regNo: '202457012', date: '2026-05-05', time: '--', status: 'Absent', livenessStatus: '--' },
   { id: 6, name: 'P. Alisha Dora', regNo: '202457029', date: '2026-05-05', time: '08:42 AM', status: 'Proxy Attempt', livenessStatus: 'Flagged' },
   { id: 7, name: 'S. Sradha Suman', regNo: '202457028', date: '2026-05-05', time: '08:55 AM', status: 'Present', livenessStatus: 'Verified' },
-  { id: 8, name: 'Anisha Swain', regNo: '202457643', date: '2026-05-05', time: '08:48 AM', status: 'Present', livenessStatus: 'Verified' },
+  { id: 8, name: 'Anisha Swain', regNo: '202457634', date: '2026-05-05', time: '08:48 AM', status: 'Present', livenessStatus: 'Verified' },
   { id: 9, name: 'Prabhasini Nayak', regNo: '202457643', date: '2026-05-05', time: '08:52 AM', status: 'Present', livenessStatus: 'Verified' },
 ];
 
