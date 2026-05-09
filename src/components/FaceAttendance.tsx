@@ -11,6 +11,8 @@ export function FaceAttendance({ user }: { user: User }) {
   const [detectedRollNo, setDetectedRollNo] = useState<string | null>(null);
   const [statusMsg, setStatusMsg] = useState('Camera off. Press start to begin attendance.');
   const [statusType, setStatusType] = useState<'idle' | 'success' | 'checking' | 'error' | 'unknown'>('idle');
+  const [location, setLocation] = useState('Location unavailable');
+  const [locationStatus, setLocationStatus] = useState<'idle' | 'loading' | 'ready' | 'error'>('idle');
   const streamRef = useRef<MediaStream | null>(null);
 
   // Initialize and request camera permissions
@@ -29,6 +31,7 @@ export function FaceAttendance({ user }: { user: User }) {
       setStatusMsg('Camera active. Processing frames...');
       setStatusType('checking');
       setDetectedName(null);
+      requestLocation();
     } catch (err) {
       console.error("Error accessing webcam:", err);
       setStatusMsg('Failed to access camera. Please allow permissions.');
@@ -152,6 +155,31 @@ export function FaceAttendance({ user }: { user: User }) {
     }
   }, [isStreaming, statusType]);
 
+  const requestLocation = () => {
+    if (!navigator.geolocation) {
+      setLocation('Geolocation not supported');
+      setLocationStatus('error');
+      return;
+    }
+
+    setLocationStatus('loading');
+    setLocation('Fetching live location...');
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+        setLocation(`Lat ${latitude.toFixed(5)}, Lon ${longitude.toFixed(5)}`);
+        setLocationStatus('ready');
+      },
+      (error) => {
+        console.warn('Geolocation error:', error);
+        setLocation('Location access denied or unavailable');
+        setLocationStatus('error');
+      },
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }
+    );
+  };
+
   // Repeatedly invoke the capture function when streaming
   useEffect(() => {
     let intervalId: NodeJS.Timeout;
@@ -255,6 +283,14 @@ export function FaceAttendance({ user }: { user: User }) {
               System Status
             </h3>
             <p className="font-medium text-lg leading-snug">{statusMsg}</p>
+          </div>
+
+          {/* Live Location Card */}
+          <div className="glass-card p-6 rounded-2xl border border-white/5 bg-navy-900 text-gray-300">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-2">Live Location</h3>
+            <p className="text-sm leading-relaxed">
+              {locationStatus === 'loading' ? 'Fetching live location...' : location}
+            </p>
           </div>
 
         </div>
