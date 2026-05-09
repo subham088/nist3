@@ -8,15 +8,15 @@ interface LoginProps {
 }
 
 const allowedUsers = [
-  { name: 'subham sahu', rollNo: '202456010' },
-  { name: 'ananda sagar dakua', rollNo: '202456008' },
-  { name: 'k sumit dora', rollNo: '202456031' },
-  { name: 'kartik jena', rollNo: '202456035' },
-  { name: 'drishika parida', rollNo: '202457012' },
-  { name: 'p. alisha dora', rollNo: '202457029' },
-  { name: 's.sradha suman', rollNo: '202457028' },
-  { name: 'anisha swain', rollNo: '202457637' },
-  { name: 'prabhasini', rollNo: '202457643' }
+  { name: 'Subham Sahu', rollNo: '202456010' },
+  { name: 'Ananda Sagar Dakua', rollNo: '202456008' },
+  { name: 'K Sumit Dora', rollNo: '202456031' },
+  { name: 'Kartik Jena', rollNo: '202456035' },
+  { name: 'Drishika Parida', rollNo: '202457012' },
+  { name: 'P. Alisha Dora', rollNo: '202457029' },
+  { name: 'S. Sradha Suman', rollNo: '202457028' },
+  { name: 'Anisha Swain', rollNo: '202457637' },
+  { name: 'Prabhasini Nayak', rollNo: '202457643' }
 ];
 
 export function Login({ onLogin }: LoginProps) {

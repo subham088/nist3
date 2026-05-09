@@ -360,8 +360,13 @@ def get_students():
         result = [
             { 'name': 'Subham Sahu', 'roll_no': '202456010', 'department': 'Computer Science', 'semester': '6th Semester', 'photo_url': None, 'cgpa': 8.5, 'attendance': 85 },
             { 'name': 'Ananda Sagar Dakua', 'roll_no': '202456008', 'department': 'Information Technology', 'semester': '6th Semester', 'photo_url': None, 'cgpa': 9.1, 'attendance': 92 },
+            { 'name': 'K Sumit Dora', 'roll_no': '202456031', 'department': 'Computer Science', 'semester': '6th Semester', 'photo_url': None, 'cgpa': 8.4, 'attendance': 88 },
+            { 'name': 'Kartik Jena', 'roll_no': '202456035', 'department': 'Mechanical Engineering', 'semester': '6th Semester', 'photo_url': None, 'cgpa': 8.7, 'attendance': 82 },
+            { 'name': 'Drishika Parida', 'roll_no': '202457012', 'department': 'Electronics', 'semester': '6th Semester', 'photo_url': None, 'cgpa': 8.3, 'attendance': 76 },
+            { 'name': 'P. Alisha Dora', 'roll_no': '202457029', 'department': 'Information Technology', 'semester': '6th Semester', 'photo_url': None, 'cgpa': 8.9, 'attendance': 90 },
+            { 'name': 'S. Sradha Suman', 'roll_no': '202457028', 'department': 'Civil Engineering', 'semester': '6th Semester', 'photo_url': None, 'cgpa': 8.6, 'attendance': 89 },
             { 'name': 'Anisha Swain', 'roll_no': '202457637', 'department': 'Computer Science', 'semester': '6th Semester', 'photo_url': None, 'cgpa': 8.8, 'attendance': 90 },
-            { 'name': 'Prabhasini', 'roll_no': '202457643', 'department': 'Electronics', 'semester': '6th Semester', 'photo_url': None, 'cgpa': 8.2, 'attendance': 85 },
+            { 'name': 'Prabhasini Nayak', 'roll_no': '202457643', 'department': 'Electronics', 'semester': '6th Semester', 'photo_url': None, 'cgpa': 8.2, 'attendance': 85 },
         ]
         
     return jsonify({'status': 'success', 'students': result})
