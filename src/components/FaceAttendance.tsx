@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
-import { Play, Square, UserCheck, AlertCircle, Loader2, CameraOff, MonitorPlay, ShieldAlert } from 'lucide-react';
+import { Play, Square, Loader2, CameraOff } from 'lucide-react';
 import { User } from '../App';
 
 export function FaceAttendance({ user }: { user: User }) {
@@ -257,42 +257,6 @@ export function FaceAttendance({ user }: { user: User }) {
             <p className="font-medium text-lg leading-snug">{statusMsg}</p>
           </div>
 
-          {/* Result Card */}
-          <div className="glass-card p-6 rounded-2xl">
-             <h3 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-4">Latest Scan Result</h3>
-             
-             {detectedName ? (
-               <div className="flex flex-col items-center justify-center py-6 text-center space-y-4">
-                 <div className={`w-20 h-20 rounded-full flex items-center justify-center shadow-inner ${
-                   detectedName === 'Spoof Detected' ? 'bg-red-500/20 text-red-500 border border-red-500/30' :
-                   detectedName === 'Unknown Person' ? 'bg-primary-500/20 text-primary-500 border border-primary-500/30' : 'bg-emerald-500/20 text-emerald-500 border border-emerald-500/30'
-                 }`}>
-                   {detectedName === 'Spoof Detected' ? <ShieldAlert className="w-10 h-10" /> : 
-                    detectedName === 'Unknown Person' ? <AlertCircle className="w-10 h-10" /> : <UserCheck className="w-10 h-10" />}
-                 </div>
-                 <div>
-                   <p className="text-sm text-gray-400 mb-1">Recognized Student</p>
-                   <p className={`text-2xl font-display font-bold tracking-tight ${
-                     detectedName === 'Spoof Detected' ? 'text-red-500' :
-                     detectedName === 'Unknown Person' ? 'text-primary-500' : 'text-white'
-                   }`}>
-                     {detectedName}
-                   </p>
-                   {detectedRollNo && (
-                     <p className="text-sm font-semibold text-accent mt-1 tracking-wider uppercase">
-                       {detectedRollNo}
-                     </p>
-                   )}
-                 </div>
-               </div>
-             ) : (
-               <div className="flex flex-col items-center justify-center py-10 text-center text-gray-500">
-                 <MonitorPlay className="w-12 h-12 mb-3 opacity-50" />
-                 <p>Waiting for a face...</p>
-               </div>
-             )}
-          </div>
-          
         </div>
       </div>
     </div>
