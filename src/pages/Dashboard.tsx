@@ -48,7 +48,11 @@ export function Dashboard({ user }: DashboardProps) {
           
           <div className="flex flex-col sm:flex-row gap-8 items-center sm:items-start relative z-10">
             <div className="w-32 h-32 rounded-2xl bg-navy-800 border-2 border-primary-500/30 overflow-hidden shrink-0">
-              <img src={`https://api.dicebear.com/7.x/initials/svg?seed=${user.name}&backgroundColor=0A1628&textColor=F5A623`} alt="Profile" className="w-full h-full object-cover" />
+               {user.photoUrl ? (
+                 <img src={user.photoUrl} alt="Profile" className="w-full h-full object-cover" />
+               ) : (
+                 <img src={`https://api.dicebear.com/7.x/initials/svg?seed=${user.name}&backgroundColor=0A1628&textColor=F5A623`} alt="Profile" className="w-full h-full object-cover" />
+               )}
             </div>
             
             <div className="flex-1 text-center sm:text-left space-y-4">

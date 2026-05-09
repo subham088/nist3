@@ -12,6 +12,8 @@ import { Sports } from './pages/Sports';
 import { Internships } from './pages/Internships';
 import { AiAssistant } from './pages/AiAssistant';
 import { Analytics } from './pages/Analytics';
+import { Profile } from './pages/Profile';
+import { Directory } from './pages/Directory';
 
 export type Language = 'English' | 'Hindi' | 'Odia' | 'Telugu' | 'Bengali';
 
@@ -19,6 +21,13 @@ export interface User {
   regNo: string;
   name: string;
   rollNo: string;
+  photoUrl?: string;
+  email?: string;
+  phone?: string;
+  department?: string;
+  semester?: string;
+  cgpa?: number;
+  overallAttendance?: number;
 }
 
 export default function App() {
@@ -39,6 +48,8 @@ export default function App() {
       case 'internships': return <Internships language={language} />;
       case 'attendance': return <FaceAttendance user={user} />;
       case 'analytics': return <Analytics />;
+      case 'profile': return <Profile user={user} setUser={setUser} />;
+      case 'directory': return <Directory />;
       default: return <Dashboard user={user} />;
     }
   };

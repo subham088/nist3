@@ -39,6 +39,7 @@ export function Layout({ children, user, activeTab, setActiveTab, language, setL
     { id: 'internships', label: 'Internships', icon: Briefcase },
     { id: 'attendance', label: 'Face Scan', icon: UserCheck },
     { id: 'analytics', label: 'Analytics', icon: Activity },
+    { id: 'directory', label: 'Directory', icon: Globe },
   ];
 
   return (
@@ -136,15 +137,15 @@ export function Layout({ children, user, activeTab, setActiveTab, language, setL
             </button>
 
             {/* User Profile */}
-            <div className="flex items-center gap-3 pl-3 sm:pl-6 border-l border-white/10">
+            <button onClick={() => setActiveTab('profile')} className="flex items-center gap-3 pl-3 sm:pl-6 border-l border-white/10 hover:bg-white/5 p-1 rounded-xl transition-colors text-left">
               <div className="text-right hidden sm:block">
                 <p className="text-sm font-semibold text-white">{user.name}</p>
                 <p className="text-xs text-primary-500 opacity-80">{user.regNo}</p>
               </div>
-              <div className="h-9 w-9 rounded-full bg-navy-800 border border-primary-500/30 flex items-center justify-center overflow-hidden">
-                <img src={`https://api.dicebear.com/7.x/initials/svg?seed=${user.name}&backgroundColor=0A1628&textColor=F5A623`} alt="Avatar" />
+              <div className="h-9 w-9 rounded-full bg-navy-800 border border-primary-500/30 flex items-center justify-center overflow-hidden shrink-0">
+                <img src={user.photoUrl || `https://api.dicebear.com/7.x/initials/svg?seed=${user.name}&backgroundColor=0A1628&textColor=F5A623`} alt="Avatar" className="w-full h-full object-cover" />
               </div>
-            </div>
+            </button>
           </div>
         </header>
 
